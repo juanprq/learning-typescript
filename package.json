@@ -1,0 +1,28 @@
+{
+  "name": "netninja",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sandbox.js",
+  "scripts": {
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juanprq/learning-typescript.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juanprq/learning-typescript/issues"
+  },
+  "homepage": "https://github.com/juanprq/learning-typescript#readme",
+  "dependencies": {
+    "ts-loader": "^7.0.3",
+    "typescript": "^3.8.3"
+  },
+  "devDependencies": {
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  }
+}
