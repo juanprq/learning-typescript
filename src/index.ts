@@ -52,3 +52,41 @@ let object = {
 /*   name: 'test', */
 /*   belt: 'orange', */
 /* }; */
+
+// Explicit Types
+
+// we can explicitly define a variable type in case we are not assigning it immediately
+let character: string;
+let age: number;
+let isLoggedIn: boolean;
+// we can define a type and an empty array for this case
+let ninjas: string[] = [];
+
+// once a type is assigned it cannot be changed
+// and we cannot assign different types to those variables
+// this will help me to use all the possible methods to the defined types
+// also will help me to define function signatures
+
+ninjas.push('test');
+
+// this is called a union type, for this case, the elements in the array can be strings or numbers.
+let stringsOrNumbers: (string | number)[];
+stringsOrNumbers.push(3);
+stringsOrNumbers.push('test');
+
+// this could be a string or a number
+let uuid: (string | number);
+
+// explicitly declaring object types
+// this can be any object
+let ninjaOne: object;
+ninjaOne = { name: 'ninja', belt: 'black' };
+
+// a strict object definition
+let ninjaTwo: { name: string, age: number, beltColor: string };
+
+// we are not allowed to do this
+/* ninjaTwo = {}; */
+
+// this is fine
+ninjaTwo = { name: 'Juan', age: 32, beltColor: 'black' };
