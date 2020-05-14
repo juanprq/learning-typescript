@@ -90,3 +90,14 @@ let ninjaTwo: { name: string, age: number, beltColor: string };
 
 // this is fine
 ninjaTwo = { name: 'Juan', age: 32, beltColor: 'black' };
+
+// the any type in typescript is whatever like in normal javascript
+let anyAge: any = '25';
+console.log(anyAge);
+anyAge = 30;
+console.log(anyAge);
+anyAge = true;
+console.log(anyAge);
+
+let mixedArray: any[] = ['mixed', 3, true, { id: 3 }];
+console.log(mixedArray);
