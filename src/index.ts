@@ -101,3 +101,46 @@ console.log(anyAge);
 
 let mixedArray: any[] = ['mixed', 3, true, { id: 3 }];
 console.log(mixedArray);
+
+// inferring the type of the variable greet (a function)
+const greet = () => {
+  console.log('Hello World!');
+};
+
+// explicitly declaring the type of greet2
+const greet2: Function = () => {
+  console.log('Hello World!');
+};
+
+// declaring argument types
+const add = (a: number, b: number) => {
+  console.log(a, b);
+};
+
+// we need to send the correct types for this function
+// these arguments are mandatory.
+add(5, 10);
+
+// for this case argument c will be optional, and we can declare that behaviour using the '?' symbol
+const add2 = (a: number, b: number, c?: string = 'default value') => {
+  console.log(a, b);
+  console.log(c);
+};
+add2(1, 3, 'Hello!');
+
+// we can define default values the same as we do in javascript
+// if we do this, we cannot use the '?' optional symbol
+const sayHi = (name: string = 'Juan') => {
+  console.log(`Hi ${name}, how are you?`);
+};
+
+// this function is inferring the default return type that is a number
+const minus = (a: number, b: number) => {
+  return a - b;
+};
+let result = minus(10, 5);
+
+// we can explicitly declare the returning type
+const minus2 = (a: number, b: number): number => {
+  return a - b;
+};
