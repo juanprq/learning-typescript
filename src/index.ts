@@ -144,3 +144,14 @@ let result = minus(10, 5);
 const minus2 = (a: number, b: number): number => {
   return a - b;
 };
+
+// we can name the types
+// obviously this can be a complex type
+type StringOrNumber = string | number;
+const test = (something: StringOrNumber) => {
+  console.log(something);
+};
+
+type ObjectWithName = { name: string, uuid: string };
+const objWithName: ObjectWithName = { name: 'hello', uuid: '123' };
+console.log(objWithName);
