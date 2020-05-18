@@ -1,4 +1,5 @@
 import './styles.css';
+import './functions';
 
 const inputs = document.querySelectorAll('input');
 console.log(inputs);
