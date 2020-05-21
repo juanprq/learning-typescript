@@ -1,4 +1,5 @@
 import './styles.css';
+import { Invoice } from './models/invoice';
 
 // interfaces
 // we define the signature of a type, but the implementation is missing.
@@ -27,41 +28,6 @@ const a: Person = {
 
 // this will enforce that the someone should be a Person type.
 let someone: Person;
-
-// classes
-class InvoiceOld {
-  // in typescript we have access modifiers
-  // and the modifier will work as expected
-  // read only is public but we cannot change it's value
-  public client: string;
-  private details: string;
-  readonly amount: number;
-
-  constructor(client: string, details: string, amount: number) {
-    this.client = client;
-    this.details = details;
-    this.amount = amount;
-  }
-
-  format(): string {
-    return `${this.client} owes ${this.amount} for ${this.details}`;
-  }
-}
-
-class Invoice {
-  // we can define the fields of the class directly on the construcor
-  // we need to use the modifiers in the constructor arguments
-  // and we can leave the constructor body empty
-  constructor(
-    readonly client: string,
-    public details: string,
-    private amount: number,
-  ) {}
-
-  format(): string {
-    return `${this.client} owes ${this.amount} for ${this.details}`;
-  }
-}
 
 const invoice1 = new Invoice('Mario', 'work on the mario website', 250);
 const invoice2 = new Invoice('Luigi', 'work on the luigi app', 300);
