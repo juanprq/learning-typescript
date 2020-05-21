@@ -1,5 +1,33 @@
 import './styles.css';
 
+// interfaces
+// we define the signature of a type, but the implementation is missing.
+// we can used also as a type for function signatures.
+interface Person {
+  name: string;
+  age: number;
+  speak(a: string): void;
+  spend(a: number): number;
+}
+
+// the object A must implement all the signatures defined in the Person interface
+const a: Person = {
+  name: 'Juan',
+  age: 32,
+  speak: (text: string) => {
+    console.log(text);
+  },
+  spend: (amount: number) => {
+    console.log(`I spent : ${amount}`);
+    return amount;
+  },
+  // we cannot add new fields to the object.
+  /* skills: [], */
+};
+
+// this will enforce that the someone should be a Person type.
+let someone: Person;
+
 // classes
 class InvoiceOld {
   // in typescript we have access modifiers
