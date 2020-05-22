@@ -1,3 +1,4 @@
+import { HasFormatter } from '../interfaces/HasFormatter';
 /* class InvoiceOld { */
 /*   // in typescript we have access modifiers */
 /*   // and the modifier will work as expected */
@@ -17,7 +18,8 @@
 /*   } */
 /* } */
 
-export class Invoice {
+// the implements will force the Invoice class to implement the format method
+export class Invoice implements HasFormatter {
   // we can define the fields of the class directly on the construcor
   // we need to use the modifiers in the constructor arguments
   // and we can leave the constructor body empty
