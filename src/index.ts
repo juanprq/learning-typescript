@@ -90,3 +90,38 @@ form.addEventListener('submit', (e: Event) => {
 
   list.render(doc, type.value, 'end');
 });
+
+// Generics
+// we can especify what subtipes can be of T
+// also we can do something like <T extends { name: string }>
+const addUuid = <T extends Object>(value: T) => {
+  const uuid = Math.floor(Math.random() * 100);
+
+  return { ...value, uuid };
+}
+
+const withUuid = addUuid({ name: 'yoshi', age: 40 })
+console.log(withUuid);
+// this doesn't know about the name
+// in order for this to work, we need to add generics definition to the function
+console.log(withUuid.name);
+
+// extending interfaces
+interface Resource<T> {
+  uuid: number;
+  resourceName: string;
+  data: T;
+}
+
+const doc3: Resource<string> = {
+  uuid: 1,
+  resourceName: 'test',
+  data: 'a string',
+};
+
+const doc4: Resource<object> = {
+  uuid: 2,
+  resourceName: 'doc4',
+  data: { value: 5 },
+};
+
