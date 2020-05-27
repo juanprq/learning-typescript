@@ -82,10 +82,13 @@ form.addEventListener('submit', (e: Event) => {
   e.preventDefault();
   let doc: HasFormatter;
 
+  // we need to specify the types in order to use them properly on the constructors below
+  let values: [string, string, number] = [toFrom.value, details.value, amount.valueAsNumber];
+
   if (type.value === 'invoice') {
-    doc = new Invoice(toFrom.value, details.value, amount.valueAsNumber);
+    doc = new Invoice(...values);
   } else {
-    doc = new Payment(toFrom.value, details.value, amount.valueAsNumber);
+    doc = new Payment(...values);
   }
 
   list.render(doc, type.value, 'end');
@@ -136,3 +139,9 @@ const doc4: Resource<object> = {
 
 // if we log, the resource type will be resolved as a integer for the order on the enum
 console.log(doc3);
+
+// Tuples, a collection with a given length, and each element of the tuple have an specific type
+let tuple: [string, number, boolean];
+tuple = ['test', 5, true]; // we need to assign the types in each defined position
+console.log(tuple);
+tuple[0] = 'test **';
