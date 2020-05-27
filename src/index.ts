@@ -106,22 +106,33 @@ console.log(withUuid);
 // in order for this to work, we need to add generics definition to the function
 console.log(withUuid.name);
 
+// Enums, a set ok constants an associate them with a numeric value.
+enum ResourceType {
+  BOOK,
+  AUTHOR,
+  FILM,
+  DIRECTOR,
+  PERSON,
+};
+
 // extending interfaces
 interface Resource<T> {
   uuid: number;
-  resourceName: string;
+  resourceName: ResourceType;
   data: T;
 }
 
 const doc3: Resource<string> = {
   uuid: 1,
-  resourceName: 'test',
+  resourceName: ResourceType.FILM,
   data: 'a string',
 };
 
 const doc4: Resource<object> = {
   uuid: 2,
-  resourceName: 'doc4',
+  resourceName: ResourceType.PERSON,
   data: { value: 5 },
 };
 
+// if we log, the resource type will be resolved as a integer for the order on the enum
+console.log(doc3);
